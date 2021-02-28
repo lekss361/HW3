@@ -152,19 +152,22 @@ namespace HW3
                         MidNumber = (MinNumber + MaxNumber) / 2;
                         int MidNUmberCoube = (int)Math.Pow(MidNumber, 3.0);
 
-                        if (MidNUmberCoube>UserInput1)
-                        {
-                            MaxNumber = MidNumber;
-                        }
-                        else
-                        {
-                            MinNumber = MidNumber;
-                        }
+                        
+                            if (MidNUmberCoube > UserInput1||MidNumber>UserInput1)
+                            {
+                                MaxNumber = MidNumber;
+                            }
+                            else
+                            {
+                                MinNumber = MidNumber;
+                            }
+                        
 
                         if (MaxNumber-MinNumber<=Inaccuracy)
                         {
                             Answer = MaxNumber - MinNumber;
-                            Console.WriteLine($"Ответ{MidNumber} Погрешность {Answer}");
+
+                            Console.WriteLine($"Ответ{Math.Pow(MidNumber, 1.0/3.0)} Погрешность {Answer}");
                         }
                     }
 
