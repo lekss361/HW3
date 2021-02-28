@@ -138,19 +138,21 @@ namespace HW3
                 case (8):
                     Console.Write("Введите число А\nА=");
                     UserInput1 = Convert.ToInt32(Console.ReadLine());
+
                     int DigitCount1 = (int)Math.Log10(UserInput1) + 1;
                     double MinNumber = 0;
                     double MaxNumber = (int)Math.Pow(10, DigitCount1);
-                    double CoubeUserInput = Math.Pow(UserInput1, 1.0 / 3.0);
+                    double SqrtUserInput = Math.Pow(UserInput1, 1.0 / 3.0);
                     double MidNumber = 0;
                     double Answer = 1;
-                   double Inaccuracy = 0.05;
+                    double Inaccuracy = 0.005;
                     
                     while (Answer>Inaccuracy)
                     {
                         MidNumber = (MinNumber + MaxNumber) / 2;
+                        int MidNUmberCoube = (int)Math.Pow(MidNumber, 3.0);
 
-                        if (MidNumber>CoubeUserInput)
+                        if (MidNUmberCoube>UserInput1)
                         {
                             MaxNumber = MidNumber;
                         }
